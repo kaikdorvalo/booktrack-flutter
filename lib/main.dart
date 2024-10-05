@@ -1,4 +1,6 @@
+import 'package:booktrack_flutter/screens/auth/pages/sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'BookTrack',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 29, 29, 41)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 29, 29, 41)),
         useMaterial3: true,
+        textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const Scaffold(),
+      home: const SignIn(),
     );
   }
 }

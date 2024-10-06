@@ -1,4 +1,5 @@
 import 'package:booktrack_flutter/constants.dart';
+import 'package:booktrack_flutter/screens/auth/widgets/inputs/email_text_input.dart';
 import 'package:booktrack_flutter/widgets/page_format.dart';
 import 'package:flutter/material.dart';
 
@@ -33,19 +34,33 @@ class _SignInState extends State {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 40.0,
+            ),
             Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: base200,
+                borderRadius: BorderRadius.circular(15.0),
               ),
-              height: 100.0,
+              padding: const EdgeInsets.all(30.0),
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      fillColor: base100,
-                      hintText: "Your first name here",
-                    ),
-                  )
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Email",
+                        style: TextStyle(
+                            color: primaryContent,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16.0),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 12.0,
+                  ),
+                  EmailTextInput(),
                 ],
               ),
             )

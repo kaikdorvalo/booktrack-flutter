@@ -1,7 +1,10 @@
 import 'package:booktrack_flutter/constants.dart';
 import 'package:flutter/material.dart';
 
-InputDecoration baseTextInputDecoration({required hintText}) {
+InputDecoration baseTextInputDecoration({
+  required hintText,
+  Widget? suffixIcon,
+}) {
   return InputDecoration(
     filled: true,
     fillColor: base100,
@@ -16,5 +19,6 @@ InputDecoration baseTextInputDecoration({required hintText}) {
     hintStyle: const TextStyle(
       color: neutral,
     ),
+    suffixIcon: suffixIcon,
   );
 }

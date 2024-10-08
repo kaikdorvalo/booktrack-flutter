@@ -88,7 +88,9 @@ class _SignInState extends State {
             const SizedBox(
               height: 25.0,
             ),
-            ConfirmButton(),
+            ConfirmButton(
+              buttonText: "Sign In",
+            ),
           ],
         ),
       ),

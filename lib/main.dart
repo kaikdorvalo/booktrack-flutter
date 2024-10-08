@@ -1,4 +1,5 @@
 import 'package:booktrack_flutter/screens/auth/pages/sign_in.dart';
+import 'package:booktrack_flutter/screens/home/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const SignIn(),
+      home: const Home(),
     );
   }
 }

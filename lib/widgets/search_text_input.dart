@@ -14,6 +14,9 @@ class _SearchTextInput extends State<SearchTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: TextStyle(
+        color: primaryContent,
+      ),
       decoration: InputDecoration(
         filled: true,
         fillColor: base100,

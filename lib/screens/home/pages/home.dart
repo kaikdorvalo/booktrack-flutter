@@ -1,5 +1,6 @@
 import 'package:booktrack_flutter/constants.dart';
 import 'package:booktrack_flutter/widgets/book_card.dart';
+import 'package:booktrack_flutter/widgets/book_mark.dart';
 import 'package:booktrack_flutter/widgets/filter_button.dart';
 import 'package:booktrack_flutter/widgets/page_format.dart';
 import 'package:booktrack_flutter/widgets/search_text_input.dart';
@@ -61,7 +62,10 @@ class _HomeState extends State<Home> {
             Expanded(
               child: ListView(
                 children: [
-                  BookCard(),
+                  BookCard(
+                    pageCount: 360,
+                    currentPage: 50,
+                  ),
                 ],
               ),
             )

@@ -1,12 +1,34 @@
 import 'package:booktrack_flutter/constants.dart';
+import 'package:booktrack_flutter/widgets/book_mark.dart';
+import 'package:booktrack_flutter/widgets/book_progress_view/book_progress_view.dart';
+import 'package:booktrack_flutter/widgets/book_stars_view/book_stars_view.dart';
+import 'package:booktrack_flutter/widgets/favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatefulWidget {
+  int currentPage;
+  int pageCount;
+
+  BookCard({required this.pageCount, required this.currentPage, super.key}) {
+    if (pageCount < 0) {
+      pageCount = 0;
+    }
+
+    if (currentPage < 0 || currentPage > pageCount) {
+      currentPage = 0;
+    }
+  }
+
   @override
   _BookCard createState() => _BookCard();
 }
 
 class _BookCard extends State<BookCard> {
+  int calculateBookProgress() {
+    double percent = (widget.currentPage * 100) / widget.pageCount;
+    return percent.round();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,19 +52,72 @@ class _BookCard extends State<BookCard> {
             ),
           ),
           SizedBox(
-            width: 10.0,
+            width: 15.0,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "A Pequena Sereia",
-                style: TextStyle(
-                  color: primaryContent,
-                  fontSize: 14.0,
-                ),
+          Expanded(
+            child: Container(
+              height: 105.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "A Pequena Sereia",
+                          style: TextStyle(
+                            color: primaryContent,
+                            fontSize: 14.0,
+                          ),
+                          textDirection: TextDirection.ltr,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          BookMark(
+                            label: "ongoing",
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
+                      BookStarsView(
+                        starred: 3,
+                      ),
+                    ],
+                  ),
+                  BookProgressView(
+                    pageCount: widget.pageCount,
+                    currentPage: widget.currentPage,
+                    progress: calculateBookProgress(),
+                  ),
+                ],
               ),
-            ],
+            ),
+          ),
+          SizedBox(
+            width: 15.0,
+          ),
+          Container(
+            height: 105.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FavoriteButton(color: Color(0xFFF8E042)),
+                Text(
+                  "${calculateBookProgress()}%",
+                  style: TextStyle(
+                    color: primaryContent,
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),

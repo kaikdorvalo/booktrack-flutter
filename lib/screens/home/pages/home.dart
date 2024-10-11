@@ -1,9 +1,9 @@
 import 'package:booktrack_flutter/constants.dart';
-import 'package:booktrack_flutter/widgets/book_card.dart';
-import 'package:booktrack_flutter/widgets/book_mark.dart';
-import 'package:booktrack_flutter/widgets/filter_button.dart';
-import 'package:booktrack_flutter/widgets/page_format.dart';
-import 'package:booktrack_flutter/widgets/search_text_input.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_card.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_mark/book_mark.dart';
+import 'package:booktrack_flutter/widgets/filter_button/filter_button.dart';
+import 'package:booktrack_flutter/widgets/page_format/page_format.dart';
+import 'package:booktrack_flutter/widgets/search_text_input/search_text_input.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:booktrack_flutter/constants.dart';
-import 'package:booktrack_flutter/widgets/book_location_and_type/book_location_and_type.dart';
-import 'package:booktrack_flutter/widgets/book_mark.dart';
-import 'package:booktrack_flutter/widgets/book_progress_view/book_progress_view.dart';
-import 'package:booktrack_flutter/widgets/book_stars_view/book_stars_view.dart';
-import 'package:booktrack_flutter/widgets/favorite_button/favorite_button.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_location_and_type/book_location_and_type.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_mark/book_mark.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_progress_view/book_progress_view.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_stars_view/book_stars_view.dart';
+import 'package:booktrack_flutter/widgets/book_card/favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatefulWidget {

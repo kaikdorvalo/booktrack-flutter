@@ -1,5 +1,5 @@
 import 'package:booktrack_flutter/constants.dart';
-import 'package:booktrack_flutter/widgets/book_type/book_type.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_type/book_type.dart';
 import 'package:flutter/material.dart';
 
 class BookLocationAndType extends StatelessWidget {

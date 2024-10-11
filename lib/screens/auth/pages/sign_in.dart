@@ -3,7 +3,7 @@ import 'package:booktrack_flutter/screens/auth/widgets/inputs/confirm_button.dar
 import 'package:booktrack_flutter/screens/auth/widgets/inputs/email_text_input.dart';
 import 'package:booktrack_flutter/screens/auth/widgets/inputs/password_text_input.dart';
 import 'package:booktrack_flutter/screens/auth/widgets/terms/accept_terms.dart';
-import 'package:booktrack_flutter/widgets/page_format.dart';
+import 'package:booktrack_flutter/widgets/page_format/page_format.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {

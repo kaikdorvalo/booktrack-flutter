@@ -1,4 +1,4 @@
-import 'package:booktrack_flutter/widgets/book_stars_view/book_star.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_stars_view/book_star.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

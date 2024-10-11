@@ -1,5 +1,5 @@
 import 'package:booktrack_flutter/constants.dart';
-import 'package:booktrack_flutter/widgets/book_progress_view/book_progress_view_bar.dart';
+import 'package:booktrack_flutter/widgets/book_card/book_progress_view/book_progress_view_bar.dart';
 import 'package:flutter/material.dart';
 
 class BookProgressView extends StatefulWidget {

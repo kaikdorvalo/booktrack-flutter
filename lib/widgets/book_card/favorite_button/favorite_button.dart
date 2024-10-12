@@ -1,10 +1,19 @@
+import 'package:booktrack_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class FavoriteButton extends StatelessWidget {
-  Color color;
+  bool favorited;
 
-  FavoriteButton({required this.color, super.key});
+  FavoriteButton({required this.favorited, super.key});
+
+  Color setFavoriteColor(bool active) {
+    if (active) {
+      return const Color(0xFFF8E042);
+    }
+
+    return primaryContent;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +24,8 @@ class FavoriteButton extends StatelessWidget {
         "icons/favorite.svg",
         width: 20.0,
         height: 20.0,
-        colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+        colorFilter:
+            ColorFilter.mode(setFavoriteColor(favorited), BlendMode.srcIn),
       ),
     );
   }

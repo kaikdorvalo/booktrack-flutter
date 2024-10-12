@@ -11,7 +11,7 @@ class BookStarsView extends StatelessWidget {
     List<Widget> items = [];
     for (int i = 0; i < 5; i++) {
       Color color = Colors.white;
-      if (i <= starred) {
+      if (i < starred) {
         color = Color(0xFFF8E042);
       }
 

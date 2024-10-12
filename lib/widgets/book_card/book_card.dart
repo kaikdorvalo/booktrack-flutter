@@ -7,10 +7,21 @@ import 'package:booktrack_flutter/widgets/book_card/favorite_button/favorite_but
 import 'package:flutter/material.dart';
 
 class BookCard extends StatefulWidget {
+  String title;
   int currentPage;
   int pageCount;
+  String bookImageUrl;
+  bool favorited;
+  int stars;
 
-  BookCard({required this.pageCount, required this.currentPage, super.key}) {
+  BookCard(
+      {required this.title,
+      required this.pageCount,
+      required this.currentPage,
+      required this.bookImageUrl,
+      required this.favorited,
+      required this.stars,
+      super.key}) {
     if (pageCount < 0) {
       pageCount = 0;
     }
@@ -49,8 +60,7 @@ class _BookCard extends State<BookCard> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          "https://cdn.discordapp.com/attachments/1247059612025356329/1293473897395781702/b6ae8e5eb503bc456752e9ef4880d71e.webp?ex=670780f0&is=67062f70&hm=4f69d596a87de6c5e4c50eece5ffd3e4c580355e1681af51b45c617ac4fe5a13&"),
+                      image: NetworkImage(widget.bookImageUrl),
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   ),
@@ -69,7 +79,7 @@ class _BookCard extends State<BookCard> {
                             Align(
                               alignment: Alignment.topLeft,
                               child: Text(
-                                "A Pequena Sereia",
+                                widget.title,
                                 style: TextStyle(
                                   color: primaryContent,
                                   fontSize: 14.0,
@@ -92,7 +102,7 @@ class _BookCard extends State<BookCard> {
                               height: 8.0,
                             ),
                             BookStarsView(
-                              starred: 3,
+                              starred: widget.stars,
                             ),
                           ],
                         ),
@@ -113,7 +123,9 @@ class _BookCard extends State<BookCard> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FavoriteButton(color: Color(0xFFF8E042)),
+                      FavoriteButton(
+                        favorited: widget.favorited,
+                      ),
                       Text(
                         "${calculateBookProgress()}%",
                         style: TextStyle(
